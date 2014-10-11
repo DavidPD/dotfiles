@@ -60,13 +60,6 @@ fi
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 REPORTTIME=10
 
 export EDITOR='subl -nw'
@@ -81,8 +74,8 @@ export EDITOR='subl -nw'
 source /usr/local/bin/z.sh
 
 # initialize keybindings (numpad)
-source ~/.zsh/zsh-keys.zsh
-source ~/.zsh/zsh-aliases.zsh
+# source ~/.zsh/zsh-keys.zsh
+# source ~/.zsh/zsh-aliases.zsh
 
 # disable something so HEAD^ works
 setopt NO_NOMATCH
