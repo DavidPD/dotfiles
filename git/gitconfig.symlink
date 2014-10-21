@@ -1,0 +1,16 @@
+[core]
+        excludesfile = ~/.gitignore_global
+        # editor = subl -n -w
+        editor = vim
+[push]
+        default = matching
+[filter "media"]
+        clean = git-media-clean %f
+        smudge = git-media-smudge %f
+[alias]
+        st = status -sb
+        discard = "!git reset --hard; git clean -f; git status"
+        sync = "!git pull; git push"
+        unstash = stash pop
+[include]
+        path = .gitconfig-local
