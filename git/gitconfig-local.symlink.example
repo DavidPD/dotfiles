@@ -2,4 +2,4 @@
         name = AUTHORNAME
         email = AUTHOREMAIL
 [credential]
-        helper = GIT_CREDINTIAL_HELPER
+        helper = GIT_CREDENTIAL_HELPER
