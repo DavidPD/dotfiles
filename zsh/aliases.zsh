@@ -6,5 +6,5 @@ if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]] ; then
 	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 	unalias ls
 	alias ls="ls --color"
-	eval `dircolors ~/.dir_colors`
+	eval `dircolors $DOTFILES/zsh/dir_colors`
 fi
