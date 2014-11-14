@@ -11,6 +11,13 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
 # Xcode
 .DS_Store
 */build/*
