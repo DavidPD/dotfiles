@@ -12,5 +12,6 @@
         discard = "!git reset --hard; git clean -f; git status"
         sync = "!git pull; git push"
         unstash = stash pop
+        pullr = pull -r
 [include]
         path = .gitconfig-local
