@@ -68,7 +68,7 @@ export EDITOR='subl -nw'
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # initialize z
-source /usr/local/bin/z.sh
+source `brew --prefix`/etc/profile.d/z.sh
 
 # disable something so HEAD^ works
 setopt NO_NOMATCH
