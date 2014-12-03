@@ -147,57 +147,47 @@ prompt_git_remote() {
 }
 
 prompt_git_stashed() {
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    local stashed
-    stashed=$(git stash list | wc -l)
-    if (( stashed != 0 )); then
-      echo " %{%F{magenta}%}⧪$stashed%{%F{default}%}";
-    fi
+  local stashed
+  stashed=$(git stash list | wc -l)
+  if (( stashed != 0 )); then
+    echo " %{%F{magenta}%}⧪$stashed%{%F{default}%}";
   fi
 }
 
 prompt_git_changed() {
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    local changed
+  local changed
 
-    changed=$(command git diff --numstat | wc -l)
-    if ((changed != 0)) ; then
-      echo " %{%F{yellow}%}⍜${changed//[[:blank:]]/}%{%F{default}%}"
-    fi
+  changed=$(command git diff --numstat | wc -l)
+  if ((changed != 0)) ; then
+    echo " %{%F{yellow}%}⍜${changed//[[:blank:]]/}%{%F{default}%}"
   fi
 }
 
 prompt_git_staged() {
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    local staged
-    staged=$(command git diff --cached --numstat | wc -l)
-    if ((staged != 0)) ; then
-      echo " %{%F{green}%}⦿${staged//[[:blank:]]/}%{%F{default}%}"
-    fi
+  local staged
+  staged=$(command git diff --cached --numstat | wc -l)
+  if ((staged != 0)) ; then
+    echo " %{%F{green}%}⦿${staged//[[:blank:]]/}%{%F{default}%}"
   fi
 }
 
 prompt_git_added() {
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    local added
-    added=$(command git ls-files --exclude-standard --others | wc -l)
-    if ((added != 0)) ; then
-      echo " %{%F{cyan}%}+${added//[[:blank:]]/}%{%F{default}%}"
-    fi
+  local added
+  added=$(command git ls-files --exclude-standard --others | wc -l)
+  if ((added != 0)) ; then
+    echo " %{%F{cyan}%}+${added//[[:blank:]]/}%{%F{default}%}"
   fi
 }
 
 prompt_git_published() {
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    local remotes
-    remotes=$(git remote | wc -l)
-    if (( $remotes != 0)); then
-      upstream=$(command git rev-parse --abbrev-ref ${hook_com[branch]}@{upstream} 2>/dev/null)
-      if [[ $? == 0 ]]; then
-        # echo "tracks"
-      else
-        echo " %{$fg_bold[red]%}unpublished%{$fg_no_bold[default]%}"
-      fi
+  local remotes upstream
+  remotes=$(git remote | wc -l)
+  if (( $remotes != 0)); then
+    upstream=$(command git rev-parse --abbrev-ref ${hook_com[branch]}@{upstream} 2>/dev/null)
+    if [[ $? == 0 ]]; then
+      # echo "tracks"
+    else
+      echo " %{$fg_bold[red]%}unpublished%{$fg_no_bold[default]%}"
     fi
   fi
 }
@@ -216,7 +206,18 @@ build_prompt() {
   prompt_end
 }
 
-RPROMPT='$(prompt_git_remote)$(prompt_git_stashed)$(prompt_git_added)$(prompt_git_staged)$(prompt_git_changed)$(prompt_git_published)'
+build_right_prompt() {
+  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+    prompt_git_remote
+    prompt_git_stashed
+    # prompt_git_added
+    prompt_git_staged
+    # prompt_git_changed
+    # prompt_git_published
+  fi
+}
+
+RPROMPT='$(build_right_prompt)'
 
 PROMPT='%{%f%b%k%}$(build_prompt) 
 ❯ '
