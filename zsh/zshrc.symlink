@@ -48,10 +48,6 @@ plugins=(git git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
-if [ -f ~/.zsh-local ]; then
-	source ~/.zsh-local
-fi
-
 # User configuration
 
 # You may need to manually set your language environment
@@ -99,3 +95,7 @@ for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
   source $file
 done
+
+if [ -f ~/.zsh-local ]; then
+	source ~/.zsh-local
+fi
