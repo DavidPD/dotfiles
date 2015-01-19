@@ -8,3 +8,6 @@ if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]] ; then
 	alias ls="ls --color"
 	eval `dircolors $DOTFILES/zsh/dir_colors`
 fi
+
+# clear the terminal screen & delete scrollback
+alias clear="\clear;printf '\e[3J' && printf '\e]50;ClearScrollback\a'"
