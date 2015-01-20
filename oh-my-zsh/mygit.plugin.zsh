@@ -1,6 +1,6 @@
 # Will cd into the top of the current repository
 # or submodule.
-alias groot='cd $(git rev-parse --show-toplevel || echo ".") && echo "I am Groot"'
+alias grt='cd $(git rev-parse --show-toplevel || echo ".") && echo "I am Groot"'
 
 # Git and svn mix
 alias git-svn-dcommit-push='git svn dcommit && git push github master:svntrunk'
