@@ -44,7 +44,7 @@ ZSH_THEME="remy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow)
+plugins=(mygit git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,7 +91,7 @@ do
 done
 
 # load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/oh-my-zsh/*}
 do
   source $file
 done
