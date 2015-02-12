@@ -1,7 +1,2 @@
 #!/usr/bin/env bash
-echo 'Begin ping'
-if ping -oc 100000 8.8.8.8 > /dev/null; then
-    echo $(say "timeout, we're all doomed")
-else
-    echo $(say 'the Internet is back up')
-fi
+ping -oc 100000 8.8.8.8 > /dev/null && say "the Internet is back!" || say "timeout, we're all doomed"
