@@ -1,1 +1,2 @@
+chmod 600 $DOTFILES/bin/crawl_rsa
 ssh joshua@crawl.akrasiac.org -i $DOTFILES/bin/crawl_rsa
