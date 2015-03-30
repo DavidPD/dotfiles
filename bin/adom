@@ -1,0 +1,10 @@
+#!/usr/bin/expect -f
+
+set DOTFILES $env(DOTFILES)
+set ADOM_USER $env(ADOM_USER)
+set ADOM_PASSWORD $env(ADOM_PASSWORD)
+spawn ssh $ADOM_USER@ancardia.us.to
+expect "password: "
+send "$ADOM_PASSWORD\n"
+interact
+exit
