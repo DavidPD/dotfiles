@@ -96,6 +96,15 @@ do
   source $file
 done
 
+pipe_if_not_empty () {
+  head=$(dd bs=1 count=1 2>/dev/null; echo a)
+  head=${head%a}
+  echo -e "$head"
+  if [ ! $head == $'\n' ]; then
+    { printf %s "$head"; cat; } | "$@"
+  fi
+}
+
 if [ -f ~/.zsh-local ]; then
 	source ~/.zsh-local
 fi
