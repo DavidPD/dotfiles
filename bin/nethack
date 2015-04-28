@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+
+set DOTFILES $env(DOTFILES)
+set NETHACK_USER $env(NETHACK_USER)
+set NETHACK_PASSWORD $env(NETHACK_PASSWORD)
+spawn telnet nethack.alt.org
+expect "=> "
+send "l"
+expect "=> "
+send "$NETHACK_USER\n"
+expect "=> "
+send "$NETHACK_PASSWORD\n"
+interact
+exit
