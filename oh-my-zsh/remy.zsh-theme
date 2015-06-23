@@ -91,6 +91,10 @@ prompt_git() {
       prompt_segment green black
     fi
     echo -n "${ref/refs\/heads\// }$dirty"
+    #work in progress branch, functions are in mygit plugin.
+    if $(git log -n 1 2>/dev/null | grep -q -c "\-\-wip\-\-"); then
+      echo -n " WIP!!"
+    fi
   fi
 }
 
