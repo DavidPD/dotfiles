@@ -125,6 +125,20 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
+# Virtualenv
+# Shows the current virtualenv (if there is one)
+prompt_virtualenv() {
+  # Get Virtual Env
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+      # Strip out the path and just leave the env name
+      venv="${VIRTUAL_ENV##*/}"
+  else
+      # In case you don't have one activated
+      venv=''
+  fi
+  [[ -n "$venv" ]] && prompt_segment cyan black "($venv)"
+}
+
 # Git remote:
 # Am I behind or ahead?
 prompt_git_remote() {
@@ -137,7 +151,7 @@ prompt_git_remote() {
   if [[ -n ${remote} ]] ; then
     ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
     behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
-    
+
     if (( $ahead || $behind )) ; then
       (( $ahead )) && gitab+=( "%{%F{green}%}+${ahead//[[:blank:]]/}%{%F{default}%}" )
       (( $ahead && $behind)) && gitab+="/"
@@ -204,6 +218,7 @@ function battery_charge {
 build_prompt() {
   RETVAL=$?
   prompt_status
+  prompt_virtualenv
   prompt_git
   # prompt_git_remote
   prompt_dir
@@ -223,5 +238,5 @@ build_right_prompt() {
 
 RPROMPT='$(build_right_prompt)'
 
-PROMPT='%{%f%b%k%}$(build_prompt) 
+PROMPT='%{%f%b%k%}$(build_prompt)
 ❯ '

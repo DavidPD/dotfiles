@@ -77,7 +77,7 @@ setopt NO_NOMATCH
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# 
+#
 # server 10.0.2.112
 
 # all of our zsh files
