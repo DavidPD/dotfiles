@@ -108,3 +108,5 @@ pipe_if_not_empty () {
 if [ -f ~/.zsh-local ]; then
 	source ~/.zsh-local
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
