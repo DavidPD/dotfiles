@@ -166,7 +166,7 @@ prompt_git_remote() {
 
 prompt_git_stashed() {
   local stashed
-  stashed=$(git stash list | wc -l)
+  stashed=$(command git stash list | wc -l)
   if (( stashed != 0 )); then
     echo " %{%F{magenta}%}⧪$stashed%{%F{default}%}";
   fi
