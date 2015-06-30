@@ -46,7 +46,7 @@ function git_work_in_progress() {
 }
 # these alias commit and uncomit wip branches
 alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
-alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"'
+alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip--"'
 
 # these alias ignore changes to file
 alias gignore='git update-index --assume-unchanged'
