@@ -16,6 +16,7 @@ fi
 # brew install grc coreutils spark
 brew install zsh z
 
-brew cask install hammerspoon
+# install cask applications
+brew cask install hammerspoon sublime-text
 
 exit 0
