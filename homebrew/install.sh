@@ -16,4 +16,6 @@ fi
 # brew install grc coreutils spark
 brew install zsh z
 
+brew cask install hammerspoon
+
 exit 0
