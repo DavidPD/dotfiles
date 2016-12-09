@@ -38,7 +38,7 @@ DerivedData
 *.xccheckout
 
 # Sublime Text
-*.sublime-workspace # User specific settings (files open, etc...)
+*.sublime-workspace
 
 # vim
 *.swp
