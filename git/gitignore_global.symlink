@@ -40,5 +40,8 @@ DerivedData
 # Sublime Text
 *.sublime-workspace
 
+# VSCode
+.vscode
+
 # vim
 *.swp
