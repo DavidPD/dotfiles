@@ -168,7 +168,7 @@ prompt_git_stashed() {
   local stashed
   stashed=$(command git stash list | wc -l | awk '{$1=$1};1')
   if (( stashed != 0 )); then
-    echo " %{%F{magenta}%}⧪$stashed%{%F{default}%}";
+    echo "%{%F{magenta}%}⧪$stashed%{%F{default}%}";
   fi
 }
 
@@ -177,7 +177,7 @@ prompt_git_changed() {
 
   changed=$(command git diff --numstat | wc -l)
   if ((changed != 0)) ; then
-    echo " %{%F{yellow}%}⍜${changed//[[:blank:]]/}%{%F{default}%}"
+    echo "%{%F{yellow}%}⍜${changed//[[:blank:]]/}%{%F{default}%}"
   fi
 }
 
@@ -185,7 +185,7 @@ prompt_git_staged() {
   local staged
   staged=$(command git diff --cached --numstat | wc -l)
   if ((staged != 0)) ; then
-    echo " %{%F{green}%}⦿${staged//[[:blank:]]/}%{%F{default}%}"
+    echo "%{%F{green}%}⦿${staged//[[:blank:]]/}%{%F{default}%}"
   fi
 }
 
@@ -193,7 +193,7 @@ prompt_git_added() {
   local added
   added=$(command git ls-files --exclude-standard --others | wc -l)
   if ((added != 0)) ; then
-    echo " %{%F{cyan}%}+${added//[[:blank:]]/}%{%F{default}%}"
+    echo "%{%F{cyan}%}+${added//[[:blank:]]/}%{%F{default}%}"
   fi
 }
 
@@ -205,7 +205,7 @@ prompt_git_published() {
     if [[ $? == 0 ]]; then
       # echo "tracks"
     else
-      echo " %{$fg_bold[red]%}unpublished%{$fg_no_bold[default]%}"
+      echo "%{$fg_bold[red]%}unpublished%{$fg_no_bold[default]%}"
     fi
   fi
 }
@@ -226,21 +226,17 @@ build_prompt() {
 }
 
 build_right_prompt() {
-  # echo "hi"
-  # echo "you"
   if $(git rev-parse --is-inside-work-tree); then
-    # echo "there"
-    # prompt_git_remote
+    prompt_git_remote
     prompt_git_stashed
-    # prompt_git_added
-    # prompt_git_staged
-    # prompt_git_changed
-    # prompt_git_published
+    prompt_git_added
+    prompt_git_staged
+    prompt_git_changed
+    prompt_git_published
   fi
-  # echo "you"
 }
 
-RPROMPT='$(prompt_git_stashed 2> /dev/null)$(prompt_git_changed 2> /dev/null)'
+RPROMPT='$(build_right_prompt | tr "\n" " ")'
 
 PROMPT='%{%f%b%k%}$(build_prompt)
 ❯ '
