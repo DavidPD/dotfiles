@@ -13,3 +13,7 @@ fi
 
 # clear the terminal screen & delete scrollback
 alias clear="\clear;printf '\e[3J' && printf '\e]50;ClearScrollback\a'"
+
+function ze () {
+	$(z $1 && e)
+}
