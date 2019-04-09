@@ -226,7 +226,7 @@ build_prompt() {
 }
 
 build_right_prompt() {
-  if $(git rev-parse --is-inside-work-tree); then
+  if $(git rev-parse --is-inside-work-tree 2> /dev/null); then
     prompt_git_remote
     prompt_git_stashed
     prompt_git_added
