@@ -96,6 +96,10 @@ do
   source $file
 done
 
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
 pipe_if_not_empty () {
   head=$(dd bs=1 count=1 2>/dev/null; echo a)
   head=${head%a}
