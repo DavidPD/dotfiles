@@ -1,8 +1,9 @@
 alias reload!='. ~/.zshrc'
 
 alias genocide='killall'
-alias f='fzf'
-alias fe='e $(fzf)'
+alias fzf-bat="fzf --preview 'bat --style=numbers --color=always {}' "
+alias f="fzf-bat --height=40% --min-height=20"
+alias fe='e $(f)'
 
 # setup gnu utils, if available
 if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]] ; then
