@@ -1,6 +1,8 @@
 alias reload!='. ~/.zshrc'
 
 alias genocide='killall'
+alias f='fzf'
+alias fe='e $(fzf)'
 
 # setup gnu utils, if available
 if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]] ; then
