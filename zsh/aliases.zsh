@@ -1,7 +1,7 @@
 alias reload!='. ~/.zshrc'
 
 alias genocide='killall'
-alias fzf-bat="fzf --preview 'bat --style=numbers --color=always {}' "
+alias fzf-bat="fzf --preview 'bat --style=full --color=always {}' "
 alias f="fzf-bat --height=40% --min-height=20"
 alias fe='e $(f)'
 
