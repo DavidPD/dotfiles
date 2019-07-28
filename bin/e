@@ -14,8 +14,6 @@
 #   $ e /usr/local
 #   # => opens the specified directory in your editor
 
-EDITOR='code -g'
-
 if [ "$1" = "" ] ; then
   exec $EDITOR .
 else

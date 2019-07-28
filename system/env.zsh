@@ -1,1 +1,1 @@
-export EDITOR='subl -nw'
+export EDITOR='subl -n'

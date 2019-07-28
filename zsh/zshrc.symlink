@@ -56,8 +56,6 @@ source $ZSH/oh-my-zsh.sh
 
 REPORTTIME=10
 
-export EDITOR='subl -nw'
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
