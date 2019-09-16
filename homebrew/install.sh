@@ -19,4 +19,7 @@ brew install zsh z fzf bat
 # install cask applications
 brew cask install hammerspoon sublime-text
 
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
+
 exit 0
