@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 #
-# Run all dotfiles installers.
+# Run all dotfiles installers and pull all submodules.
+
+git submodule init
+git submodule update
 
 set -e
 
