@@ -10,6 +10,7 @@
         smudge = git-media-smudge %f
 [alias]
         st = status -sb
+        dc = diff --cached
         discard = "!git reset --hard; git clean -f; git status"
         sync = "!git pull; git push"
         unstash = stash pop

@@ -79,6 +79,8 @@ setopt NO_NOMATCH
 #
 # server 10.0.2.112
 
+alias git=hub
+
 # all of our zsh files
 typeset -U config_files
 config_files=($DOTFILES/**/*.zsh)
@@ -113,13 +115,3 @@ if [ -f ~/.zsh-local ]; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/daviddovel/Projects/hsf/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/daviddovel/Projects/hsf/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/daviddovel/Projects/hsf/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/daviddovel/Projects/hsf/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/daviddovel/Projects/hsf/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/daviddovel/Projects/hsf/node_modules/tabtab/.completions/slss.zsh

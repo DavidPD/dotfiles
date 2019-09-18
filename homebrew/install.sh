@@ -14,7 +14,7 @@ fi
 
 # Install homebrew packages
 # brew install grc coreutils spark
-brew install zsh z fzf bat
+brew install zsh git hub z fzf bat
 
 # install cask applications
 brew cask install hammerspoon sublime-text
