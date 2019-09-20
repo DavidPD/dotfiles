@@ -79,8 +79,6 @@ setopt NO_NOMATCH
 #
 # server 10.0.2.112
 
-alias git=hub
-
 # all of our zsh files
 typeset -U config_files
 config_files=($DOTFILES/**/*.zsh)
