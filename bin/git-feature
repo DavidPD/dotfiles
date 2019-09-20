@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Lists all commits in the current branch that have been added since master.
+
+# TODO:
+# - Fix issue where this script shows too much if not based on the current master
+# - Display commits in reverse order so the first commit is shown first
+
+git rev-list --pretty=oneline master..HEAD | cat -n
+count=$(git rev-list --count master..HEAD)
+echo "git rebase -i @~$count" | tee | pbcopy
