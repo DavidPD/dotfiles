@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+#
+# Display a report containing all feature commits and the files changed
+
+count=$(git rev-list --count master..HEAD)
+if [[ $count -eq 0 ]]; then
+echo "No revisions yet..."
+return 0
+fi
+
+revisions=("${(@f)$(git rev-list master..HEAD)}")
+for ((i=1; i <= $count; i++))
+do
+rev=${revisions[$i]}
+echo "$i $rev "`git show -s --format=%B $rev`"\n"
+git diff-tree --no-commit-id --name-only -r $rev
+echo ""
+done
+echo "git rebase -i @~$(($i-1))" | tee | pbcopy
