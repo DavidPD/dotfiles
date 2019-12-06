@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-ping -oc 100000 8.8.8.8 > /dev/null && say "the Internet is back!" || say "timeout, we're all doomed"

@@ -1,1 +1,0 @@
-$DOTFILES/git/findDebug.sh

@@ -1,3 +1,0 @@
-[submodule "oh-my-zsh/plugins/fzf-z"]
-	path = oh-my-zsh/plugins/fzf-z
-	url = https://github.com/andrewferrier/fzf-z
