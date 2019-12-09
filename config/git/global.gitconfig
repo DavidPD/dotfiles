@@ -1,5 +1,5 @@
 [core]
-    excludesfile = ~/.dotfiles/git/global.gitignore
+    excludesfile = ~/.dotfiles/config/git/global.gitignore
     # editor = subl -n -w
     editor = vim
     pager = "less -x 5,9"
