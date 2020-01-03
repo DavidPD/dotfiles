@@ -6,6 +6,9 @@ export ZSH_THEME='remy'
 
 source $ZSH/oh-my-zsh.sh
 
+source <(antibody init)
+antibody bundle < $DOTFILES/zsh/zsh-plugins.txt
+
 # TODO: Dynamically source zsh files?
 source $DOTFILES/zsh/aliases.zsh
 

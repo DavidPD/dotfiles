@@ -14,6 +14,9 @@ fi
 brew install zsh
 brew install git
 
+# Antibody is a zsh plugin manager
+brew install getantibody/tap/antibody
+
 # Used for swift scripting and automatic dependency fetching
 brew install swift-sh
 
