@@ -8,3 +8,6 @@ source $ZSH/oh-my-zsh.sh
 
 # TODO: Dynamically source zsh files?
 source $DOTFILES/zsh/aliases.zsh
+
+# initialize z
+source `brew --prefix`/etc/profile.d/z.sh
