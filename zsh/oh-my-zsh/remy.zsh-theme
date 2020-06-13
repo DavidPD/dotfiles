@@ -237,7 +237,7 @@ build_right_prompt() {
   fi
 }
 
-RPROMPT='$(build_right_prompt | tr "\n" " ")'
+RPROMPT=$(build_right_prompt | tr "\n" " ")
 
-PROMPT='%{%f%b%k%}$(build_prompt)
-❯ '
+PROMPT="%{%f%b%k%}$(build_prompt)
+❯ "
