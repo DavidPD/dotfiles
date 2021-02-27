@@ -5,6 +5,7 @@ export ZSH_THEME='remy'
 source $ZSH/oh-my-zsh.sh
 
 path+=("$HOME/.dotfiles/bin")
+path+=("$HOME/.bin")
 
 source <(antibody init)
 antibody bundle < $DOTFILES/zsh/zsh-plugins.txt
