@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
 # vim:ft=zsh ts=2 sw=2 sts=2
 #
 # Based on agnoster's Theme - https://gist.github.com/3712874
@@ -239,5 +238,5 @@ build_right_prompt() {
 
 RPROMPT=$(build_right_prompt | tr "\n" " ")
 
-PROMPT="%{%f%b%k%}$(build_prompt)
-❯ "
+PROMPT='%{%f%b%k%}$(build_prompt)
+❯ '
